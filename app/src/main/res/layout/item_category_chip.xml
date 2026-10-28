@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="category"
+            type="com.example.moviesapp.ui.activities.Category" />
+
+        <variable
+            name="viewModel"
+            type="com.example.moviesapp.viewmodels.MoviesViewModel" />
+    </data>
+
+    <TextView
+        android:id="@+id/tv_category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:categoryBackground="@{category}"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        tools:text="All"
+        android:text="@{category.name}"
+        android:onClick="@{() -> viewModel.onCategorySelected(category.name)}"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</layout>
